@@ -1,0 +1,2 @@
+<!--pages/components/cv-content/cv-li/cv-li.wxml-->
+<rich-text nodes="{{ linodes }}"></rich-text>

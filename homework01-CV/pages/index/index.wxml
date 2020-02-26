@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<cv-header>
+  <view slot="title">CM</view>
+  <view slot="phoneNumber">xxx-xxxx-xxxx</view>
+  <view slot="emailAddress">xxxxx@xxx.com</view>
+</cv-header>
+
+
+<cv-content-block>
+  <view slot="content-block-title">个人陈述</view>
+  <view slot="content-block-content">
+    <cv-li data-text="勤奋好学，有一定的抗压能力"></cv-li>
+    <cv-li data-text="github地址：github.com/HenryCai11"></cv-li>
+
+  </view>
+</cv-content-block>
+
+<cv-content-block>
+  <view slot="content-block-title">教育经历</view>
+  <view slot="content-block-content">
+    <view>北京语言大学</view>
+    <cv-ul>
+      <cv-li data-text="GPA: 4.0/4.0"></cv-li>
+      <cv-li data-text="相关课程：移动开发"></cv-li>
+    </cv-ul>
+  </view>
+</cv-content-block>
+
+<cv-content-block>
+  <view slot="content-block-title">技能素养</view>
+  <view slot="content-block-content">
+    <view>计算机技能</view>
+    <cv-ul>
+      <cv-li data-text="编程语言：JavaScript"></cv-li>
+      <cv-li data-text="框架：Vue.js"></cv-li>
+    </cv-ul>
+  </view>
+</cv-content-block>
+
+
+
+

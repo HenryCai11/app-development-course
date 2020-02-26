@@ -1,0 +1,7 @@
+/* pages/components/cv-content/cv-content-block.wxss */
+.content-block{
+  margin: 10px 20px
+}
+.title{
+  font-family: "microsoft yahei"
+}

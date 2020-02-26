@@ -1,0 +1,8 @@
+<!--pages/components/cv-content/cv-content-block.wxml-->
+<view class="content-block">
+  <view><slot class="title" name="content-block-title"></slot></view>
+  <rich-text nodes="<hr>"></rich-text>
+  <view><slot class="content" name="content-block-content"></slot></view>
+</view>
+
+

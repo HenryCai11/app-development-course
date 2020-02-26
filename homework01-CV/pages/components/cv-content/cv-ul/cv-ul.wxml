@@ -1,0 +1,2 @@
+<!--pages/components/cv-content/cv-ul/cv-ul.wxml-->
+<rich-text nodes="{{ nodes }}"></rich-text>

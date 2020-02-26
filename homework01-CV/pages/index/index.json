@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "cv-header": "../components/cv-header/cv-header",
+    "cv-ul": "../components/cv-content/cv-ul/cv-ul",
+    "cv-li": "../components/cv-content/cv-li/cv-li",
+    "cv-content-block": "../components/cv-content/cv-content-block"
+  }
+}

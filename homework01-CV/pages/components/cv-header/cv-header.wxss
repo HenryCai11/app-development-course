@@ -1,0 +1,11 @@
+/* pages/components/cv-header/cv-header.wxss */
+.cv-header{
+  text-align: center;
+}
+.cv-header .title{
+  font-family: sans-serif;
+  font-size: 30px;
+}
+.phoneNumber, .emailAddress{
+  display: inline-flex;
+}

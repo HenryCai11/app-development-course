@@ -1,0 +1,6 @@
+<!--pages/components/cv-header/cv-header.wxml-->
+<view class="cv-header">
+  <view class="title"><slot name="title"></slot></view>
+  <view class="phoneNumber"><slot name="phoneNumber"></slot>|</view>
+  <view class="emailAddress"><slot name="emailAddress"></slot></view>
+</view>
