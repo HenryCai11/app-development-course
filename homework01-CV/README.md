@@ -3,11 +3,11 @@
 #### 作业目录结构
 
 ├─pages
-│  ├─components		//组件目录
-│  │  ├─cv-content	   //个人简历内容组件
-│  │  │  ├─cv-li			  //实现HTML \<li> 标签的组件 
-│  │  │  └─cv-ul			 //实现HTML \<ul> 标签的组件
-│  │  └─cv-header		//个人简历头部组件
+│  ├─components	
+│  │  ├─cv-content
+│  │  │  ├─cv-li
+│  │  │  └─cv-ul
+│  │  └─cv-header
 │  ├─index
 │  └─logs
 └─utils
