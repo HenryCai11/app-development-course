@@ -3,13 +3,21 @@
 #### 作业目录结构
 
 ├─pages
+
 │  ├─components
+
 │  │  ├─cv-content
+
 │  │  │  ├─cv-li
+
 │  │  │  └─cv-ul
+
 │  │  └─cv-header
+
 │  ├─index
+
 │  └─logs
+
 └─utils
 
 #### 组件说明
