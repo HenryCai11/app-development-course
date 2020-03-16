@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view>
+  <view wx:for="{{ info.title }}" wx:for-index="idx">
+    {{ item }}
+    <view wx:for="{{ info.details[idx] }}">
+      {{ item.title }}: {{ item.content }}
+    </view>
+  </view>
+</view>
