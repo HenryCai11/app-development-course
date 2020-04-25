@@ -7,3 +7,4 @@
     </view>
   </view>
 </view>
+<wxs src="./test.wxs" module="test" />
