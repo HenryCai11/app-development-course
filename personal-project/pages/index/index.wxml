@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<!-- 顶部日期选择器 -->
+<!-- 使用vant-weapp布局 -->
+<van-row class="headerbar">
+  <!-- 左箭头 选择前一个日期 -->
+  <van-col span="6">
+    <view icon="back">
+      左
+    </view>
+  </van-col>
+  <!-- 日期选择器 -->
+  <van-col span="12">
+    <picker-view indicator-style="height:2em" class="timepicker">
+      <picker-view-column>
+        <view wx:for="{{ years }}">{{ item }}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{ months }}">{{ item }}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{ days }}">{{ item }}日</view>
+      </picker-view-column>
+    </picker-view>
+  </van-col>
+  <!-- 右箭头 选择后一个日期 -->
+  <van-col span="6">
+    <view>右</view>
+  </van-col>
+</van-row>
