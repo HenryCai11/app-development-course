@@ -1,4 +1,12 @@
 <!--index.wxml-->
+<!-- popup区域 -->
+<van-popup
+  show="{{ show }}"
+  position="top"
+  custom-style="height:20%"
+>
+
+</van-popup>
 <!-- 顶部日期选择器 -->
 <!-- 使用vant-weapp布局 -->
 <van-row class="headerbar">
@@ -10,17 +18,7 @@
   </van-col>
   <!-- 日期选择器 -->
   <van-col span="12">
-    <picker-view indicator-style="height:2em" class="timepicker">
-      <picker-view-column>
-        <view wx:for="{{ years }}">{{ item }}年</view>
-      </picker-view-column>
-      <picker-view-column>
-        <view wx:for="{{ months }}">{{ item }}月</view>
-      </picker-view-column>
-      <picker-view-column>
-        <view wx:for="{{ days }}">{{ item }}日</view>
-      </picker-view-column>
-    </picker-view>
+    <button></button>
   </van-col>
   <!-- 右箭头 选择后一个日期 -->
   <van-col span="6">
