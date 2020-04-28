@@ -1,27 +1,139 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <!-- popup区域 -->
-<van-popup
-  show="{{ show }}"
-  position="top"
-  custom-style="height:20%"
->
-
+<van-popup show="{{ show }}" position="top" custom-style="height:50%" bind:close="onClose">
+  <van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" bind:confirm="confirmDate" bind:cancel="cancelPicker" min-date="{{ minDate }}"></van-datetime-picker>
 </van-popup>
 <!-- 顶部日期选择器 -->
 <!-- 使用vant-weapp布局 -->
 <van-row class="headerbar">
   <!-- 左箭头 选择前一个日期 -->
   <van-col span="6">
-    <view icon="back">
-      左
+    <view style="font-size: 1.5em" bindtap="dateBack">
+      🔙
     </view>
   </van-col>
   <!-- 日期选择器 -->
   <van-col span="12">
-    <button></button>
+    <van-button type="info" bindtap="showPopup" custom-style="width:100%;height:2em">
+      {{ year }}年{{ month }}月{{ day }}日
+    </van-button>
   </van-col>
   <!-- 右箭头 选择后一个日期 -->
   <van-col span="6">
-    <view>右</view>
+    <view style="font-size: 1.5em" bindtap="dateForward">
+      🔜
+    </view>
   </van-col>
 </van-row>
+<!-- 中间信息展示部分 -->
+<van-row class="body-form">
+  <view class="alter-text {{ hasContent?'hide':'' }}">赶紧开始记账️吧🎈</view>
+  <view wx:for="{{ interface }}" wx:key="*this">
+    <van-swipe-cell right-width="{{ 65 }}">
+      <van-cell-group>
+        <van-cell title="{{ item.category }} {{ item.emoji }}" value="{{ item.number }} 💰" />
+      </van-cell-group>
+      <view slot="right" class="right-cell" bindtap="deleteItem" data-id="{{ item.id }}"><view>删除</view></view>
+    </van-swipe-cell>
+  </view>
+</van-row>
+<!-- 底部tabbar -->
+<van-row class="bottom-bar">
+  <view class="cu-bar tabbar bg-black">
+    <view class="action text-blue">
+      <view class="cuIcon-edit"></view>
+      信息
+    </view>
+    <view class="action text-gray add-action">
+      <button class="cu-btn cuIcon-add bg-blue shadow" bindtap="showBottom"></button>
+      记录
+    </view>
+    <view class="action text-gray">
+      <view class="cuIcon-rankfill"></view>
+      统计
+    </view>
+  </view>
+</van-row>
+<!-- 底部记录弹框 -->
+<van-popup show="{{ bottomShow }}" position="bottom" custom-style="height:70%" bind:close="bottomOnClose">
+  <!-- 信息框 -->
+  <view class="info-grid">
+    <van-field value="{{ inputNumber }}" class="input-box" label="￥" input-align="right" custom-style="font-size:2em;padding-top:1em;" readonly></van-field>
+    <view class="grid col-5 padding-sm">
+      <view class="margin-tb-sm text-center" wx:for="{{categoryList}}" wx:for-index="idx" wx:key="*this">
+        <button class="cu-btn round {{ item.pick?'bg':'line' }}-blue" bindtap="pickCategory" data-ctg="{{ idx }}">
+          <text class="cuIcon-{{item.icon}}"></text>
+        </button>
+        <view>{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 数字输入框 -->
+  <view class="number-grid">
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="7">
+        7
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="8">
+        8
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="9">
+        9
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="-1">
+        👈
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="4">
+        4
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="5">
+        5
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="6">
+        6
+      </van-button>
+    </view>
+    <view class="number-item" id="enter">
+      <van-button plain type="default" size="large" custom-style="height:100%;background-color:lightblue" bind:click="addItem">
+        👌
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="1">
+        1
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="2">
+        2
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="3">
+        3
+      </van-button>
+    </view>
+    <view class="number-item" id="zero">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="0">
+        0
+      </van-button>
+    </view>
+    <view class="number-item">
+      <van-button plain type="default" size="large" custom-style="height:100%" bind:click="operateOnNumber" data-num="-2">
+        .
+      </van-button>
+    </view>
+  </view>
+</van-popup>
