@@ -1,0 +1,21 @@
+
+#myCanvasDay {
+  width: 375.2px;
+  height: 300px;
+}
+#myCanvasMonth {
+  width: 375.2px;
+  height: 300px;
+}
+#myCanvasYear {
+  width: 375.2px;
+  height: 300px;
+}
+
+/* 底部tabbar */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+

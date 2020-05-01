@@ -41,16 +41,14 @@
 <van-row class="bottom-bar">
   <view class="cu-bar tabbar bg-black">
     <view class="action text-blue">
-      <view class="cuIcon-edit"></view>
-      信息
+      <navigator url="../index/index" open-type="redirect"><view class="cuIcon-edit"></view>信息</navigator>
     </view>
     <view class="action text-gray add-action">
       <button class="cu-btn cuIcon-add bg-blue shadow" bindtap="showBottom"></button>
       记录
     </view>
     <view class="action text-gray">
-      <view class="cuIcon-rankfill"></view>
-      统计
+      <navigator url="../stats/stats" open-type="redirect"><view class="cuIcon-rankfill"></view>统计</navigator>
     </view>
   </view>
 </van-row>
